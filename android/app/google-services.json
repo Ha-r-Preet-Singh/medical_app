@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "923557198694",
+    "project_id": "cogent-range-406007",
+    "storage_bucket": "cogent-range-406007.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923557198694:android:783e28b67f12ba89dbe6a7",
+        "android_client_info": {
+          "package_name": "com.example.medical_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZnicBfuJkzEPLU_YCznd4s3Sk-9XdCuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
