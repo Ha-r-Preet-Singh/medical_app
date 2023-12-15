@@ -62,7 +62,7 @@ class _PlaceOrderState extends State<PlaceOrder> {
               mHeight: 10.h,
             ),
         Container(
-          height: 100.h,
+          height: 120.h,
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10).w,
@@ -111,7 +111,7 @@ class _PlaceOrderState extends State<PlaceOrder> {
               mHeight: 10.h,
             ),
             Container(
-              height:  100.h,
+              height:  120.h,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10).w,
@@ -171,7 +171,7 @@ class _PlaceOrderState extends State<PlaceOrder> {
               ],
             ),
             mSpacer(
-              mHeight: 170.h,
+              mHeight: 60.h,
             ),
 
             CustomText(fText: "Payment Method",fWeight: FontWeight.bold,fSize: 18,),

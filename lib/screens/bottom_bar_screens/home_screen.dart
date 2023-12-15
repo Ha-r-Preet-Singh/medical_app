@@ -196,26 +196,31 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 200, left: 20, right: 20),
-              child: Card(
-                elevation: 12,
-                shadowColor: AppColors.myBackgroundColor,
-                color: AppColors.myBackgroundColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50).w,
-                ),
-                child: CustomTextField(
+            Positioned(
+              top: 160,
+              left: 5,
+              child: SizedBox(
+                height: 60.h,
+                width: 350.w,
+                child: Card(
+                  elevation: 12,
+                  shadowColor: AppColors.myBackgroundColor,
+                  color: AppColors.myBackgroundColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50).w,
+                  ),
+                  child: CustomTextField(
 
 
-                  hintTxt: "Search Medicene & Healthcare products",
-                  fillColor: AppColors.myBackgroundColor,
-                  prefixIcon: Icons.search_rounded,
+                    hintTxt: "Search Medicene & Healthcare products",
+                    fillColor: AppColors.myBackgroundColor,
+                    prefixIcon: Icons.search_rounded,
 
-                  prefixColor: AppColors.myGreyColor,
-                  borderColor: AppColors.myBackgroundColor,
-                  textFieldRadius: BorderRadius.circular(50.w),
-                  validate: (value) {},
+                    prefixColor: AppColors.myGreyColor,
+                    borderColor: AppColors.myBackgroundColor,
+                    textFieldRadius: BorderRadius.circular(50.w),
+                    validate: (value) {},
+                  ),
                 ),
               ),
             ),
