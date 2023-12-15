@@ -1,10 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medical_app/provider/count_provider.dart';
 import 'package:medical_app/screens/bottom_bar.dart';
+import 'package:medical_app/screens/bottom_bar_screens/home_screen.dart';
 import 'package:medical_app/screens/onboarding/intro_screen.dart';
 
 import 'package:medical_app/screens/onboarding/splash_screen.dart';
+import 'package:provider/provider.dart';
 
 
 void main() async{
@@ -13,8 +16,14 @@ void main() async{
   await ScreenUtil.ensureScreenSize();
 
   runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context) => CountProvider(),)
+      
+    ],
+        child: MyApp(),
+    )
 
-      const MyApp());
+      );
 }
 
 class MyApp extends StatelessWidget {

@@ -1,10 +1,14 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_app/constants/colors.dart';
 import 'package:medical_app/constants/spacer.dart';
+import 'package:medical_app/provider/count_provider.dart';
 import 'package:medical_app/screens/add_to_cart_screen/place_order.dart';
 import 'package:medical_app/widgets/custom_container.dart';
 import 'package:medical_app/widgets/custom_text.dart';
+import 'package:provider/provider.dart';
 
 class YourCart extends StatefulWidget {
   const YourCart({super.key});
@@ -31,6 +35,7 @@ class _YourCartState extends State<YourCart> {
   @override
   Widget build(BuildContext context) {
 
+final countProvider =Provider.of<CountProvider>(context,listen: false);
     return Scaffold(
       appBar: AppBar(
         title: CustomText(fText: "Your Cart",fWeight: FontWeight.bold,fSize: 18,),
@@ -146,24 +151,34 @@ class _YourCartState extends State<YourCart> {
                                         mSpacer(
                                           mWidth: 27.w,
                                         ),
-
                                         CustomContainer(
                                           cHeight: 30.h,
-                                          cWidth: 100.h,
+                                          cWidth: 100.w,
                                           cRadius: BorderRadius.circular(50).w,
                                           cColor: AppColors.myGreyColor.withOpacity(0.2),
                                           mChild:  Row(
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
                                               CustomContainer(
+                                                onTap: (){
+                                                  countProvider.decrementCount();
+                                                },
                                                 cHeight: 30.h,
                                                 cWidth: 35.w,
                                                 cRadius: BorderRadius.circular(50).w,
                                                 cColor: AppColors.mYMainColor.withOpacity(.2),
                                                 mChild: Center(child: Icon(Icons.remove)),
                                               ),
-                                              CustomText(fText: "1",fWeight: FontWeight.bold,fSize: 20,),
+                                              Consumer<CountProvider>(builder: (_, provider, ___) {
+                                                print("build");
+                                                return CustomText(fText: "${provider.count}",fSize: 15.sp,fWeight: FontWeight.bold,);
+                                              },),
+
+
                                               CustomContainer(
+                                                onTap: (){
+                                                  countProvider.incrementCount();
+                                                },
                                                 cHeight: 30.h,
                                                 cWidth: 35.w,
                                                 cRadius: BorderRadius.circular(50).w,
@@ -174,6 +189,8 @@ class _YourCartState extends State<YourCart> {
                                           ),
 
                                         ),
+
+
 
                                       ],
                                     ),
@@ -198,6 +215,8 @@ class _YourCartState extends State<YourCart> {
 
                 },),
               ),
+
+
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
