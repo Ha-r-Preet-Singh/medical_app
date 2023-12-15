@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_app/constants/colors.dart';
 import 'package:medical_app/constants/spacer.dart';
-import 'package:medical_app/screens/onboarding/firebase/verify_code.dart';
+
+import 'package:medical_app/screens/onboarding/phone_auth/verify_code.dart';
 import 'package:medical_app/widgets/custom_Elevated_Button.dart';
 import 'package:medical_app/widgets/custom_container.dart';
 import 'package:medical_app/widgets/custom_text.dart';

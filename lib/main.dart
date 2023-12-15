@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_app/screens/bottom_bar.dart';
 import 'package:medical_app/screens/onboarding/intro_screen.dart';
-import 'package:medical_app/screens/onboarding/firebase/login_signup_screen.dart';
+
 import 'package:medical_app/screens/onboarding/splash_screen.dart';
-import 'package:medical_app/screens/onboarding/firebase/verify_code.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();

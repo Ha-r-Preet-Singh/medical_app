@@ -5,7 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:medical_app/constants/colors.dart';
 import 'package:medical_app/constants/spacer.dart';
-import 'package:medical_app/screens/onboarding/firebase/login_signup_screen.dart';
+import 'package:medical_app/screens/onboarding/phone_auth/login_signup_screen.dart';
+
 import 'package:medical_app/widgets/custom_text.dart';
 
 class IntroScreen extends StatelessWidget {
