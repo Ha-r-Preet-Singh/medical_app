@@ -18,7 +18,7 @@ class LoginSignUpScreen extends StatefulWidget {
 }
 
 class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
-  TextEditingController phoneController = TextEditingController();
+  var phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,21 +106,27 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                     child: CustomElevatedButton(
                         buttonElevation: 12,
                         onTap: () async {
-                          await FirebaseAuth.instance.verifyPhoneNumber(
+                          var auth = FirebaseAuth.instance;
+                          await auth.verifyPhoneNumber(
                               verificationCompleted:
-                                  (PhoneAuthCredential credential) {},
-                              verificationFailed: (FirebaseAuthException ex) {},
+                                  (credential) {
+                                auth.signInWithCredential(credential).then((value) => print("Auto signin completed!!: ${value.user!.uid}"));
+                                  },
+                              verificationFailed: (error) {
+                                print("Verification Failed:${error.message}");
+                              },
                               codeSent:
-                                  (String verificationId, int? resendtoken) {
+                                  (String verificationId, int? resendToken) {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => VerifyCode(verificationId: verificationId,),
+                                          builder: (context) => VerifyCode(verificationid: verificationId,),
                                         ));
                                   },
                               codeAutoRetrievalTimeout:
                                   (String verificationId) {},
-                              phoneNumber: phoneController.text.toString());
+                              phoneNumber: "+91${phoneController.text.toString()}"
+                          );
 
                         },
                         mChild: CustomText(

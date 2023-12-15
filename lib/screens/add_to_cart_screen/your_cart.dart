@@ -113,7 +113,7 @@ class _YourCartState extends State<YourCart> {
                                           ],
                                         ),
                                         mSpacer(
-                                          mWidth: 50.w,
+                                          mWidth: 20.w,
                                         ),
                                         Container(
                                           height: 30.h,
@@ -144,7 +144,7 @@ class _YourCartState extends State<YourCart> {
 
 
                                         mSpacer(
-                                          mWidth: 30.w,
+                                          mWidth: 27.w,
                                         ),
 
                                         CustomContainer(

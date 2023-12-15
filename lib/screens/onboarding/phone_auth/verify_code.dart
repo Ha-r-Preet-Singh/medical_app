@@ -11,8 +11,8 @@ import 'package:medical_app/widgets/custom_text.dart';
 import 'package:pinput/pinput.dart';
 
 class VerifyCode extends StatefulWidget {
-  String verificationId;
-  VerifyCode({super.key, required this.verificationId});
+  String verificationid;
+  VerifyCode({super.key, required this.verificationid});
 
   @override
   State<VerifyCode> createState() => _VerifyCodeState();
@@ -96,7 +96,7 @@ class _VerifyCodeState extends State<VerifyCode> {
                       try {
                         PhoneAuthCredential credential =
                             await PhoneAuthProvider.credential(
-                                verificationId: widget.verificationId,
+                                verificationId: widget.verificationid,
                                 smsCode: otpController.text.toString());
 
                         FirebaseAuth.instance.signInWithCredential(credential).then((value) {
