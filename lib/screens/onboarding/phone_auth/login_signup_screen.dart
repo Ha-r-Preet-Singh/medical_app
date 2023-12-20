@@ -118,7 +118,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                               },
                               codeSent:
                                   (String verificationId, int? resendToken) {
-                                    Navigator.push(
+                                    Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) => VerifyCode(verificationid: verificationId,),
